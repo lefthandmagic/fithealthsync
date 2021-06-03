@@ -2,10 +2,11 @@ import React from 'react';
 import {  ImageBackground, 
     StyleSheet, 
 } from 'react-native';
+import * as Apphealth from '../components/apphealth';
 
 import FitbitConnect from '../components/fitbit';
 function FitHealthHome(props) {
-
+    
     return (
         <ImageBackground
         style = {styles.background}

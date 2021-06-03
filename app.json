@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lefthandmagic.FitHealthSync"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,10 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "plugins": [
+      "react-native-health",
+      "expo-task-manager"
+    ]
   }
 }

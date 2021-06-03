@@ -63,7 +63,7 @@ export default function FitbitConnect() {
   }
 
   function FitBitSync() {
-    return <View style={styles.actionContainer}> 
+    return <View style={[styles.actionContainer, styles.syncContainer]}> 
     <TouchableOpacity style={styles.touchable}
       disabled={!request}
       onPress={() => {
@@ -90,7 +90,9 @@ const styles = StyleSheet.create({
       position: "absolute",
       top: 100,
       alignItems:"center",
-      flexDirection: "row"
+  },
+  syncContainer: {
+    flexDirection: "row"
   },
   text: {
       paddingTop: 15,
