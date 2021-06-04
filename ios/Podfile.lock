@@ -3,6 +3,9 @@ PODS:
   - DoubleConversion (1.1.6)
   - EXApplication (3.1.2):
     - UMCore
+  - EXBackgroundFetch (9.1.0):
+    - UMCore
+    - UMTaskManagerInterface
   - EXConstants (10.1.3):
     - UMConstantsInterface
     - UMCore
@@ -32,6 +35,11 @@ PODS:
     - UMCore
   - EXStructuredHeaders (1.0.1):
     - UMCore
+  - EXTaskManager (9.1.0):
+    - UMAppLoader
+    - UMConstantsInterface
+    - UMCore
+    - UMTaskManagerInterface
   - EXUpdates (0.5.5):
     - EXStructuredHeaders
     - React-Core
@@ -344,6 +352,7 @@ PODS:
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXApplication (from `../node_modules/expo-application/ios`)
+  - EXBackgroundFetch (from `../node_modules/expo-background-fetch/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXCrypto (from `../node_modules/expo-crypto/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
@@ -355,6 +364,7 @@ DEPENDENCIES:
   - EXRandom (from `../node_modules/expo-random/ios`)
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - EXStructuredHeaders (from `../node_modules/expo-structured-headers/ios`)
+  - EXTaskManager (from `../node_modules/expo-task-manager/ios`)
   - EXUpdates (from `../node_modules/expo-updates/ios`)
   - EXWebBrowser (from `../node_modules/expo-web-browser/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -411,6 +421,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   EXApplication:
     :path: "../node_modules/expo-application/ios"
+  EXBackgroundFetch:
+    :path: "../node_modules/expo-background-fetch/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
   EXCrypto:
@@ -433,6 +445,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-splash-screen/ios"
   EXStructuredHeaders:
     :path: "../node_modules/expo-structured-headers/ios"
+  EXTaskManager:
+    :path: "../node_modules/expo-task-manager/ios"
   EXUpdates:
     :path: "../node_modules/expo-updates/ios"
   EXWebBrowser:
@@ -526,6 +540,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXApplication: 47e6e78f70d07f538eeb544d5d0abe3287ac7043
+  EXBackgroundFetch: 5348a5e4eaf3cc5d993425823d9d01de2866ec4e
   EXConstants: c00cd53a17a65b2e53ddb3890e4e74d3418e406e
   EXCrypto: 20929fb8376586119a0dc84033b463fe73c315a6
   EXErrorRecovery: 397b8830a66d45fc8018943475a2d530f91a65c4
@@ -537,6 +552,7 @@ SPEC CHECKSUMS:
   EXRandom: 679d878f2c3eca0a1107e1f76b394cc5f5fa642e
   EXSplashScreen: b59a58feda693c17f1af73c715e4e058919fcb7c
   EXStructuredHeaders: 0c3b4c8030ec5ed2c3bc0b64f5af81005b9cb5c8
+  EXTaskManager: aeda7970ddac47b11637c4c2cedfcc43dddff05f
   EXUpdates: 3bcd7a0fda56c88951ff3eaa207e68dcaabe9f19
   EXWebBrowser: 09dc93e052fa9f639e385225681f34b6e8fe9ead
   FBLazyVector: 3bb422f41b18121b71783a905c10e58606f7dc3e

@@ -19,7 +19,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.lefthandmagic.FitHealthSync"
+      "bundleIdentifier": "com.lefthandmagic.FitHealthSync",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "fetch"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -33,7 +38,8 @@
     "description": "",
     "plugins": [
       "react-native-health",
-      "expo-task-manager"
+      "expo-task-manager",
+      "expo-background-fetch"
     ]
   }
 }
