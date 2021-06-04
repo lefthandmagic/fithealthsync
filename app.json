@@ -22,7 +22,8 @@
       "bundleIdentifier": "com.lefthandmagic.FitHealthSync",
       "infoPlist": {
         "UIBackgroundModes": [
-          "fetch"
+          "fetch",
+          "location"
         ]
       }
     },
@@ -30,7 +31,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK"
+      ],
+      "package": "com.lefthandmagic.FitHealthSync"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"

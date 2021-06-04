@@ -28,7 +28,7 @@ export function SyncFitHealth(access_token) {
       console.log("schedule sync here")
       TaskManager.isTaskRegisteredAsync(BACKGROUND_TASK_NAME)
       .then(res => {
-        console.log(res)
+        TaskManager.getRegisteredTasksAsync().then(res => console.log(res));
         if (!res) {
           const options =  {
             minimumInterval: 30,
@@ -36,8 +36,8 @@ export function SyncFitHealth(access_token) {
             startOnBoot: true
           }
           BackgroundFetch.registerTaskAsync(BACKGROUND_TASK_NAME,
-            options)
-            console.log("registeredTask")
+            options).then(() => console.log("task registred", BACKGROUND_TASK_NAME))
+            .catch(error => console.error(error))
           }
       });
   }
