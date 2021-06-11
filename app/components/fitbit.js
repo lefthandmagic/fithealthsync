@@ -9,17 +9,21 @@ import {
 } from 'react-native';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
+
 import * as SyncFit from '../helper/syncfithealth';
+import cache from '../utility/cache';
 
 WebBrowser.maybeCompleteAuthSession();
 
 const useProxy = Platform.select({ web: false, default: true });
+const ACCESS_TOKEN_STORAGE_KEY = "ATSK";
 // Endpoint
 const discovery = {
   authorizationEndpoint: 'https://www.fitbit.com/oauth2/authorize',
   tokenEndpoint: 'https://api.fitbit.com/oauth2/token',
   revocationEndpoint: 'https://api.fitbit.com/oauth2/revoke',
 };
+
 
 export default function FitbitConnect() {
 
@@ -40,12 +44,19 @@ export default function FitbitConnect() {
     discovery
   );
 
-  React.useEffect(() => {
-    if (response?.type === 'success') {
+  async function updateAccessToken() {
+    const access_token =  await cache.getPersistantStore(ACCESS_TOKEN_STORAGE_KEY)
+    setAccessToken(access_token)
+    if (access_token === null && response?.type === 'success') {
       const { access_token} = response.params;
       setAccessToken(access_token)
+      cache.persistantStore(ACCESS_TOKEN_STORAGE_KEY, access_token)
       }
-  }, [response]);
+  }
+
+  React.useEffect(() => { 
+    updateAccessToken() 
+  } , [response]);
 
   if (accessToken !== null) 
     return ( <FitBitSync />) ;
